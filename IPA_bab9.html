@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catatan IPA: Getaran, Gelombang & Bunyi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                    },
+                    colors: {
+                        pastel: {
+                            pink: '#FFD1DC',
+                            blue: '#AEC6CF',
+                            yellow: '#FDFD96',
+                            green: '#77DD77',
+                            purple: '#C3B1E1',
+                            text: '#5D4037' // Soft brown for text instead of harsh black
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcf9f2;
+            background-image: radial-gradient(#e5d9c5 2px, transparent 2px);
+            background-size: 30px 30px;
+            color: #5D4037;
+        }
+        .cute-shadow {
+            box-shadow: 5px 5px 0px 0px rgba(255, 182, 193, 0.5);
+        }
+        .cute-shadow-blue {
+            box-shadow: 5px 5px 0px 0px rgba(174, 198, 207, 0.5);
+        }
+        .cute-shadow-green {
+            box-shadow: 5px 5px 0px 0px rgba(119, 221, 119, 0.5);
+        }
+        .highlight {
+            background: linear-gradient(120deg, #ffffca 0%, #ffffca 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 80%;
+            font-weight: 700;
+        }
+        /* Tambahan Animasi untuk Fitur Chat AI */
+        .chat-bubble { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    </style>
+</head>
+<body class="p-4 md:p-8 font-sans selection:bg-pink-200">
+
+    <!-- Main Notebook Container -->
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl border-4 border-pink-200 p-6 md:p-10 relative overflow-hidden">
+        
+        <!-- Notebook bindings decorative -->
+        <div class="absolute left-2 top-0 bottom-0 w-4 border-r-2 border-dashed border-gray-200"></div>
+
+        <!-- Header -->
+        <div class="text-center mb-10 pl-6">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-pink-400 mb-2 drop-shadow-sm">
+                🌸 Catatan IPA Kelas 8 🌸
+            </h1>
+            <h2 class="text-xl md:text-2xl font-bold text-pastel-blue">Getaran, Gelombang, dan Bunyi 🎶</h2>
+            <p class="text-sm mt-2 text-gray-500 font-semibold">Semangat belajarnya! (๑˃̵ᴗ˂̵)و</p>
+        </div>
+
+        <!-- SECTION 1: GETARAN -->
+        <div class="mb-12 pl-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="bg-pastel-yellow p-3 rounded-full text-2xl">🪀</div>
+                <h3 class="text-2xl font-bold border-b-4 border-pastel-yellow pb-1">1. GETARAN</h3>
+            </div>
+            
+            <div class="bg-yellow-50 rounded-2xl p-5 border-2 border-yellow-200 cute-shadow">
+                <p class="mb-3">
+                    <span class="highlight">Getaran</span> adalah gerak bolak-balik secara periodik melalui <span class="font-bold text-yellow-600">titik keseimbangan</span>.
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-6 items-center my-4 bg-white p-4 rounded-xl">
+                    <div class="flex-1 text-sm md:text-base">
+                        <ul class="space-y-2">
+                            <li>📍 <strong>Titik Keseimbangan:</strong> Titik di mana benda tidak bergerak (diam) jika tidak diberi simpangan.</li>
+                            <li>📏 <strong>Amplitudo (A):</strong> Simpangan terjauh dari titik keseimbangan.</li>
+                            <li>🔄 <strong>1 Getaran Penuh:</strong> Gerakan dari titik awal kembali ke titik awal melalui lintasan lengkap.</li>
+                        </ul>
+                    </div>
+                    <!-- Cute Pendulum SVG -->
+                    <div class="w-32 h-32 flex justify-center items-center bg-yellow-100 rounded-xl relative">
+                        <svg width="80" height="80" viewBox="0 0 100 100">
+                            <!-- ceiling -->
+                            <line x1="20" y1="10" x2="80" y2="10" stroke="#8B4513" stroke-width="4" stroke-linecap="round"/>
+                            <!-- string -->
+                            <line x1="50" y1="10" x2="50" y2="70" stroke="#555" stroke-width="2" stroke-dasharray="4"/>
+                            <line x1="50" y1="10" x2="20" y2="60" stroke="#999" stroke-width="2"/>
+                            <line x1="50" y1="10" x2="80" y2="60" stroke="#999" stroke-width="2"/>
+                            <!-- pendulum bob -->
+                            <circle cx="50" cy="70" r="10" fill="#FFB6C1"/>
+                            <!-- letters -->
+                            <text x="15" y="85" font-size="12" fill="#5D4037" font-weight="bold">A</text>
+                            <text x="45" y="95" font-size="12" fill="#5D4037" font-weight="bold">B (Seimbang)</text>
+                            <text x="75" y="85" font-size="12" fill="#5D4037" font-weight="bold">C</text>
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-sm font-bold text-center text-yellow-700 bg-yellow-100 py-1 rounded-lg">Contoh 1 Getaran = A &rarr; B &rarr; C &rarr; B &rarr; A</p>
+
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-xl border border-yellow-200">
+                        <h4 class="font-bold text-lg text-yellow-600 mb-2">⏱️ Frekuensi (f)</h4>
+                        <p class="text-sm mb-2">Banyaknya getaran yang terjadi dalam 1 detik.</p>
+                        <div class="bg-yellow-100 text-center font-bold text-xl py-2 rounded-lg text-yellow-800">
+                            f = n / t
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 text-center">Satuan: Hertz (Hz)</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-yellow-200">
+                        <h4 class="font-bold text-lg text-yellow-600 mb-2">⏳ Periode (T)</h4>
+                        <p class="text-sm mb-2">Waktu yang dibutuhkan untuk melakukan 1 getaran penuh.</p>
+                        <div class="bg-yellow-100 text-center font-bold text-xl py-2 rounded-lg text-yellow-800">
+                            T = t / n
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1 text-center">Satuan: Sekon (s)</p>
+                    </div>
+                </div>
+                <p class="text-center mt-3 text-sm font-bold bg-white inline-block px-4 py-1 rounded-full border border-yellow-300">Hubungan f dan T: <span class="text-yellow-600">f = 1/T</span> atau <span class="text-yellow-600">T = 1/f</span></p>
+                <p class="text-xs text-gray-500 mt-2 text-center">Keterangan: n = jumlah getaran, t = waktu (sekon)</p>
+            </div>
+        </div>
+
+        <!-- SECTION 2: GELOMBANG -->
+        <div class="mb-12 pl-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="bg-pastel-blue p-3 rounded-full text-2xl">🌊</div>
+                <h3 class="text-2xl font-bold border-b-4 border-pastel-blue pb-1">2. GELOMBANG</h3>
+            </div>
+
+            <div class="bg-blue-50 rounded-2xl p-5 border-2 border-blue-200 cute-shadow-blue">
+                <p class="mb-3">
+                    <span class="highlight">Gelombang</span> adalah getaran yang merambat. Ingat ya, yang merambat itu <strong>energinya</strong>, bukan materinya (mediumnya diam)! 💨
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
+                    <!-- Berdasarkan Medium -->
+                    <div class="bg-white p-4 rounded-xl">
+                        <h4 class="font-bold text-blue-500 border-b-2 border-blue-100 mb-2">Berdasarkan Mediumnya:</h4>
+                        <ul class="text-sm space-y-2">
+                            <li><strong>Mekanik:</strong> Butuh medium/perantara untuk merambat.<br><em>Contoh: Gelombang bunyi, gelombang air, tali.</em></li>
+                            <li><strong>Elektromagnetik:</strong> Bisa merambat tanpa medium (bisa di ruang hampa).<br><em>Contoh: Cahaya matahari, gelombang radio, sinar-X.</em></li>
+                        </ul>
+                    </div>
+                    <!-- Rumus Gelombang -->
+                    <div class="bg-white p-4 rounded-xl border-2 border-blue-100 flex flex-col justify-center items-center">
+                        <h4 class="font-bold text-blue-500 mb-2">⚡ Cepat Rambat Gelombang (v)</h4>
+                        <div class="bg-blue-100 text-center font-bold text-xl py-2 px-6 rounded-lg text-blue-800 w-full mb-2">
+                            v = λ × f <span class="text-sm font-normal">atau</span> v = λ / T
+                        </div>
+                        <p class="text-xs text-center text-gray-600">
+                            <strong>v</strong> = Cepat rambat (m/s)<br>
+                            <strong>λ (Lambda)</strong> = Panjang gelombang (m)<br>
+                            <strong>f</strong> = Frekuensi (Hz), <strong>T</strong> = Periode (s)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Berdasarkan Arah Rambat -->
+                <h4 class="font-bold text-blue-600 mt-6 mb-3 text-center bg-blue-100 py-1 rounded-full">Berdasarkan Arah Getar & Arah Rambat</h4>
+                
+                <div class="space-y-4">
+                    <!-- Transversal -->
+                    <div class="bg-white p-4 rounded-xl border border-blue-200">
+                        <div class="flex flex-col md:flex-row gap-4 items-center">
+                            <div class="flex-1">
+                                <h5 class="font-bold text-lg text-blue-600">〰️ Gelombang Transversal</h5>
+                                <p class="text-sm mb-2">Arah getarnya <strong>tegak lurus</strong> dengan arah rambatnya.</p>
+                                <ul class="text-sm list-disc pl-4 text-gray-600">
+                                    <li>Bentuknya berupa <strong>Bukit</strong> dan <strong>Lembah</strong>.</li>
+                                    <li><span class="font-bold text-blue-500">1 Panjang Gelombang (1 λ)</span> = 1 Bukit + 1 Lembah.</li>
+                                    <li><em>Contoh: Gelombang pada tali, gelombang air laut.</em></li>
+                                </ul>
+                            </div>
+                            <div class="w-full md:w-48 h-24 bg-blue-50 rounded-lg flex items-center justify-center">
+                                <!-- Cute Transversal Wave SVG -->
+                                <svg width="150" height="60" viewBox="0 0 150 60">
+                                    <path d="M 10 30 Q 25 0, 45 30 T 80 30 T 115 30 T 150 30" fill="none" stroke="#4682B4" stroke-width="3"/>
+                                    <line x1="0" y1="30" x2="150" y2="30" stroke="#ccc" stroke-width="1" stroke-dasharray="2"/>
+                                    <text x="35" y="15" font-size="10" fill="#4682B4">Bukit</text>
+                                    <text x="55" y="55" font-size="10" fill="#4682B4">Lembah</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Longitudinal -->
+                    <div class="bg-white p-4 rounded-xl border border-blue-200">
+                        <div class="flex flex-col md:flex-row gap-4 items-center">
+                            <div class="flex-1">
+                                <h5 class="font-bold text-lg text-blue-600">🪗 Gelombang Longitudinal</h5>
+                                <p class="text-sm mb-2">Arah getarnya <strong>sejajar/berimpit</strong> dengan arah rambatnya.</p>
+                                <ul class="text-sm list-disc pl-4 text-gray-600">
+                                    <li>Bentuknya berupa <strong>Rapatan</strong> dan <strong>Renggangan</strong>.</li>
+                                    <li><span class="font-bold text-blue-500">1 Panjang Gelombang (1 λ)</span> = 1 Rapatan + 1 Renggangan.</li>
+                                    <li><em>Contoh: Gelombang bunyi, pegas/slinki yang didorong.</em></li>
+                                </ul>
+                            </div>
+                            <div class="w-full md:w-48 h-24 bg-blue-50 rounded-lg flex items-center justify-center">
+                                <!-- Cute Longitudinal SVG (Slinky representation) -->
+                                <svg width="140" height="40" viewBox="0 0 140 40">
+                                    <!-- Rapatan -->
+                                    <path d="M 10 20 Q 15 5, 20 20 Q 25 35, 30 20 Q 35 5, 40 20" fill="none" stroke="#4682B4" stroke-width="2"/>
+                                    <text x="15" y="38" font-size="9" fill="#4682B4">Rapatan</text>
+                                    <!-- Renggangan -->
+                                    <path d="M 40 20 Q 55 5, 70 20 Q 85 35, 100 20" fill="none" stroke="#4682B4" stroke-width="2"/>
+                                    <text x="50" y="38" font-size="9" fill="#4682B4">Renggangan</text>
+                                    <!-- Rapatan again -->
+                                    <path d="M 100 20 Q 105 5, 110 20 Q 115 35, 120 20 Q 125 5, 130 20" fill="none" stroke="#4682B4" stroke-width="2"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: BUNYI -->
+        <div class="mb-4 pl-6">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="bg-pastel-pink p-3 rounded-full text-2xl">🦇</div>
+                <h3 class="text-2xl font-bold border-b-4 border-pastel-pink pb-1">3. BUNYI</h3>
+            </div>
+
+            <div class="bg-pink-50 rounded-2xl p-5 border-2 border-pink-200 cute-shadow">
+                <p class="mb-3">
+                    Bunyi adalah gelombang <span class="highlight">longitudinal dan mekanik</span>. Artinya bunyi butuh perantara untuk merambat dan bentuk gelombangnya berupa rapatan-renggangan. 🗣️👂
+                </p>
+
+                <div class="bg-white rounded-xl p-4 my-4 border border-pink-100 flex gap-2 items-center">
+                    <div class="text-3xl">✅</div>
+                    <div>
+                        <h4 class="font-bold text-pink-600">Syarat Terdengarnya Bunyi:</h4>
+                        <p class="text-sm">1. Ada Sumber Bunyi &nbsp; 2. Ada Medium (Zat padat/cair/gas) &nbsp; 3. Ada Pendengar (Alat pendengaran normal).</p>
+                        <p class="text-xs text-pink-500 mt-1"><em>*Psst! Bunyi merambat paling cepat di zat padat, lalu zat cair, dan paling lambat di gas/udara lho!</em></p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold text-pink-500 mt-6 mb-2">🎵 Jenis Bunyi Berdasarkan Frekuensi:</h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <div class="bg-white p-3 rounded-xl border border-pink-200 text-center hover:bg-pink-100 transition">
+                        <div class="text-2xl mb-1">🦗🐕</div>
+                        <h5 class="font-bold text-pink-600">Infrasonik</h5>
+                        <p class="text-xs font-bold bg-pink-100 rounded-full inline-block px-2 py-1 mb-1">&lt; 20 Hz</p>
+                        <p class="text-xs">Sangat rendah. Hanya bisa didengar hewan seperti jangkrik, anjing, dan gajah.</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-xl border-2 border-pink-400 text-center shadow-sm relative">
+                        <div class="absolute -top-2 -right-2 text-xl">✨</div>
+                        <div class="text-2xl mb-1">👩‍🦰👨‍🦱</div>
+                        <h5 class="font-bold text-pink-600">Audiosonik</h5>
+                        <p class="text-xs font-bold bg-pink-200 text-pink-800 rounded-full inline-block px-2 py-1 mb-1">20 - 20.000 Hz</p>
+                        <p class="text-xs">Frekuensi normal yang bisa didengar oleh telinga <strong>manusia</strong>.</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-xl border border-pink-200 text-center hover:bg-pink-100 transition">
+                        <div class="text-2xl mb-1">🦇🐬</div>
+                        <h5 class="font-bold text-pink-600">Ultrasonik</h5>
+                        <p class="text-xs font-bold bg-pink-100 rounded-full inline-block px-2 py-1 mb-1">&gt; 20.000 Hz</p>
+                        <p class="text-xs">Sangat tinggi. Hanya bisa didengar kelelawar, lumba-lumba (dipakai buat sonar!).</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <!-- Resonansi -->
+                    <div class="bg-white p-4 rounded-xl border border-pink-200">
+                        <h4 class="font-bold text-pink-500 flex items-center gap-2 mb-2">🎸 Resonansi</h4>
+                        <p class="text-sm">Peristiwa ikut bergetarnya suatu benda karena benda lain bergetar. Syaratnya: <strong>Frekuensi kedua benda harus sama</strong>.</p>
+                        <p class="text-xs mt-2 text-gray-500"><em>Contoh: Senar gitar dipetik, udara dalam kotak gitar ikut bergetar jadi suaranya nyaring.</em></p>
+                    </div>
+                    <!-- Pemantulan -->
+                    <div class="bg-white p-4 rounded-xl border border-pink-200">
+                        <h4 class="font-bold text-pink-500 flex items-center gap-2 mb-2">📢 Pemantulan Bunyi</h4>
+                        <ul class="text-sm space-y-2">
+                            <li><strong>Gaung/Kerdam:</strong> Bunyi pantul datang <em>sebagian bersamaan</em> dengan bunyi asli. Suara jadi nggak jelas! (Sering di ruang kosong/bioskop).</li>
+                            <li><strong>Gema:</strong> Bunyi pantul terdengar <em>lengkap setelah</em> bunyi asli selesai. (Di tebing/gunung).</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer / Closing -->
+        <div class="text-center mt-10 text-gray-400 text-sm">
+            <p>Dibuat dengan 💖 untuk belajar IPA yang lebih menyenangkan!</p>
+        </div>
+
+        <!-- FITUR BARU: AI Quiz Section -->
+        <div class="mt-12 border-t-4 border-dashed border-pink-200 pt-8 text-center pb-8">
+            <h3 class="text-2xl font-bold text-pink-500 mb-2">Uji Pemahamanmu! 🧠</h3>
+            <p class="text-gray-600 mb-6 text-sm">Tantang dirimu dengan soal latihan yang dibuat khusus oleh AI Assistant!</p>
+            <button id="btn-generate-quiz" class="bg-gradient-to-r from-pink-400 to-purple-400 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95 text-lg">
+                ✨ Buatkan Latihan Soal ✨
+            </button>
+            <div id="quiz-container" class="mt-8 text-left hidden space-y-4">
+                <!-- Konten Kuis akan dimasukkan ke sini oleh JavaScript -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FITUR BARU: AI Tutor Floating Chat -->
+    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50">
+        <!-- Chat Box Container -->
+        <div id="chat-box" class="hidden w-[90vw] max-w-[350px] bg-white rounded-2xl shadow-2xl border-4 border-pink-200 overflow-hidden mb-4 flex-col h-[400px]">
+            <div class="bg-pink-300 text-white font-bold p-3 flex justify-between items-center shadow-md">
+                <span class="flex items-center gap-2">🤖 <span>AI Asisten Tutor</span></span>
+                <button id="close-chat" class="hover:text-pink-100 text-2xl leading-none">&times;</button>
+            </div>
+            
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-pink-50 flex flex-col gap-3 text-sm">
+                <!-- Welcome Message -->
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none cute-shadow inline-block self-start max-w-[85%] border border-pink-100 text-gray-700">
+                    Halo! 👋 Aku asisten AI yang siap bantu kamu belajar Getaran, Gelombang, dan Bunyi. Ada bagian yang bikin kamu pusing? Tanya aku aja!
+                </div>
+            </div>
+
+            <div class="p-3 bg-white border-t-2 border-pink-100 flex gap-2">
+                <input type="text" id="chat-input" class="flex-1 border-2 border-pink-200 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-pink-400 bg-gray-50" placeholder="Ketik pertanyaanmu...">
+                <button id="send-chat" class="bg-pink-400 text-white rounded-full p-2 w-10 h-10 flex items-center justify-center hover:bg-pink-500 shadow-md transition-colors">
+                    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Toggle Button -->
+        <button id="toggle-chat" class="bg-gradient-to-r from-pink-400 to-purple-400 text-white w-16 h-16 rounded-full shadow-xl flex items-center justify-center text-3xl transform transition hover:scale-110 ml-auto block border-2 border-white">
+            ✨💬
+        </button>
+    </div>
+
+    <!-- Integrasi Gemini API -->
+    <script>
+        // API Key disediakan oleh environment eksekusi
+        const apiKey = ""; 
+        
+        // --- Fungsi Helper Fetch dengan Exponential Backoff ---
+        async function fetchGeminiAPI(payload) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const delays = [1000, 2000, 4000, 8000, 16000]; // Maksimal 5x retry
+            
+            for (let i = 0; i < delays.length; i++) {
+                try {
+                    const response = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return await response.json();
+                } catch (error) {
+                    if (i === delays.length - 1) throw error;
+                    await new Promise(resolve => setTimeout(resolve, delays[i]));
+                }
+            }
+        }
+
+        // --- Logika Fitur 1: AI Chat Tutor ---
+        const chatBox = document.getElementById('chat-box');
+        const toggleChatBtn = document.getElementById('toggle-chat');
+        const closeChatBtn = document.getElementById('close-chat');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.getElementById('chat-input');
+        const sendChatBtn = document.getElementById('send-chat');
+
+        toggleChatBtn.addEventListener('click', () => {
+            chatBox.classList.toggle('hidden');
+            chatBox.classList.toggle('flex');
+        });
+        closeChatBtn.addEventListener('click', () => {
+            chatBox.classList.add('hidden');
+            chatBox.classList.remove('flex');
+        });
+
+        function addMessage(text, isUser) {
+            const msgDiv = document.createElement('div');
+            const alignClass = isUser ? 'bg-pink-100 rounded-tr-none self-end border-pink-200' : 'bg-white rounded-tl-none self-start border-pink-100 cute-shadow';
+            msgDiv.className = `p-3 rounded-2xl inline-block max-w-[85%] chat-bubble border text-gray-700 ${alignClass}`;
+            
+            // Konversi sederhana untuk format tebal markdown (**teks**) menjadi HTML
+            msgDiv.innerHTML = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            chatMessages.appendChild(msgDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typing-indicator';
+            typingDiv.className = 'bg-white p-3 rounded-2xl rounded-tl-none cute-shadow inline-block self-start flex gap-1 items-center max-w-[85%] border border-pink-100';
+            typingDiv.innerHTML = '<div class="w-2 h-2 bg-pink-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-pink-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-pink-400 rounded-full typing-dot"></div>';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTyping() {
+            const typingDiv = document.getElementById('typing-indicator');
+            if (typingDiv) typingDiv.remove();
+        }
+
+        async function handleSendChat() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+            
+            addMessage(text, true);
+            chatInput.value = '';
+            showTyping();
+
+            // Prompt Sistem untuk Chat
+            const prompt = `Kamu adalah AI Asisten Tutor IPA Kelas 8 yang ramah, imut, dan sabar. Jawab pertanyaan siswa ini tentang materi Getaran, Gelombang, dan Bunyi. Gunakan bahasa Indonesia yang santai, mudah dimengerti, gunakan perumpamaan sehari-hari jika perlu, dan sertakan emoji lucu. Jaga jawabanmu agar cukup ringkas. Jika pertanyaan di luar konteks pelajaran IPA, arahkan kembali untuk fokus belajar. \n\nPertanyaan Siswa: "${text}"`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+
+            try {
+                const result = await fetchGeminiAPI(payload);
+                const reply = result.candidates?.[0]?.content?.parts?.[0]?.text || "Maaf, aku sedang pusing 😵‍💫 Coba tanya lagi nanti ya!";
+                removeTyping();
+                addMessage(reply, false);
+            } catch (error) {
+                removeTyping();
+                addMessage("Ups! Koneksiku terputus. Coba periksa jaringan internetmu dan tanyakan lagi ya 🥺", false);
+            }
+        }
+
+        sendChatBtn.addEventListener('click', handleSendChat);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleSendChat();
+        });
+
+        // --- Logika Fitur 2: AI Quiz Generator ---
+        const btnGenerateQuiz = document.getElementById('btn-generate-quiz');
+        const quizContainer = document.getElementById('quiz-container');
+
+        btnGenerateQuiz.addEventListener('click', async () => {
+            btnGenerateQuiz.disabled = true;
+            btnGenerateQuiz.innerHTML = '⏳ AI Sedang Meracik Soal...';
+            btnGenerateQuiz.classList.add('opacity-70', 'cursor-not-allowed');
+            quizContainer.classList.remove('hidden');
+            quizContainer.innerHTML = '<div class="text-center text-pink-400 font-bold animate-pulse my-10">Memanggil kecerdasan buatan... ✨🧠</div>';
+
+            // Prompt Sistem untuk JSON Terstruktur
+            const prompt = `Buatkan 3 latihan soal pilihan ganda bahasa Indonesia tingkat kesulitan sedang-menengah tentang materi IPA Kelas 8: Getaran, Gelombang, dan Bunyi.
+            Sertakan beberapa angka/perhitungan sederhana (misal cari frekuensi/periode) di salah satu soal.
+            Format output HARUS JSON murni berupa array of objects seperti struktur berikut, jangan ada teks lain:
+            [
+              {
+                "pertanyaan": "teks pertanyaan",
+                "opsi": ["A. opsi 1", "B. opsi 2", "C. opsi 3", "D. opsi 4"],
+                "jawaban_benar": 0,
+                "pembahasan": "penjelasan mengapa jawaban tersebut benar"
+              }
+            ]`;
+
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: {
+                    responseMimeType: "application/json" // Meminta Gemini mengembalikan format JSON
+                }
+            };
+
+            try {
+                const result = await fetchGeminiAPI(payload);
+                const responseText = result.candidates[0].content.parts[0].text;
+                const questions = JSON.parse(responseText);
+                
+                renderQuiz(questions);
+            } catch (error) {
+                quizContainer.innerHTML = '<div class="text-red-500 text-center bg-red-50 p-4 rounded-xl border border-red-200">Aduh! Gagal memuat soal dari AI. Coba klik tombolnya lagi ya! 🥺</div>';
+            } finally {
+                btnGenerateQuiz.disabled = false;
+                btnGenerateQuiz.classList.remove('opacity-70', 'cursor-not-allowed');
+                btnGenerateQuiz.innerHTML = '✨ Buatkan Latihan Soal Baru ✨';
+            }
+        });
+
+        function renderQuiz(questions) {
+            quizContainer.innerHTML = '';
+            questions.forEach((q, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'bg-white p-6 rounded-2xl border-2 border-pink-200 cute-shadow relative';
+                
+                let optionsHtml = '';
+                q.opsi.forEach((opt, optIdx) => {
+                    optionsHtml += `
+                        <label class="block p-3 border-2 border-transparent bg-pink-50 rounded-xl mb-3 cursor-pointer hover:bg-pink-100 hover:border-pink-300 transition-all quiz-option" data-question="${index}" data-correct="${q.jawaban_benar === optIdx}">
+                            <input type="radio" name="q${index}" value="${optIdx}" class="hidden">
+                            <span class="text-gray-700">${opt}</span>
+                        </label>
+                    `;
+                });
+
+                qDiv.innerHTML = `
+                    <div class="absolute -top-3 -left-3 bg-pink-400 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-md">${index + 1}</div>
+                    <h4 class="font-bold text-lg mb-4 text-gray-800 ml-2">${q.pertanyaan}</h4>
+                    <div class="options-container">${optionsHtml}</div>
+                    <div id="feedback-${index}" class="hidden mt-4 p-4 rounded-xl text-sm leading-relaxed"></div>
+                `;
+                quizContainer.appendChild(qDiv);
+            });
+
+            // Logika untuk mengecek jawaban kuis
+            const allOptions = document.querySelectorAll('.quiz-option');
+            allOptions.forEach(opt => {
+                opt.addEventListener('click', function() {
+                    const qIndex = this.getAttribute('data-question');
+                    const isCorrect = this.getAttribute('data-correct') === 'true';
+                    const feedbackDiv = document.getElementById(`feedback-${qIndex}`);
+                    const parent = this.closest('.options-container');
+                    
+                    if(parent.classList.contains('answered')) return; // Cegah ganti jawaban
+                    parent.classList.add('answered');
+
+                    // Warnai opsi jawaban
+                    const siblings = parent.querySelectorAll('.quiz-option');
+                    siblings.forEach(s => {
+                        s.classList.remove('hover:bg-pink-100', 'hover:border-pink-300', 'cursor-pointer');
+                        s.classList.add('cursor-default');
+                        if(s.getAttribute('data-correct') === 'true') {
+                            s.classList.replace('bg-pink-50', 'bg-green-100');
+                            s.classList.replace('border-transparent', 'border-green-400');
+                        } else {
+                            s.classList.add('opacity-40');
+                        }
+                    });
+
+                    // Tampilkan kotak pembahasan (feedback)
+                    feedbackDiv.classList.remove('hidden');
+                    if (isCorrect) {
+                        feedbackDiv.classList.add('bg-green-50', 'text-green-800', 'border-2', 'border-green-300');
+                        feedbackDiv.innerHTML = `<span class="text-lg block mb-1">🎉 <strong>Tepat Sekali!</strong></span> ${questions[qIndex].pembahasan}`;
+                    } else {
+                        // Tandai yang salah dipilih jadi merah
+                        this.classList.replace('bg-pink-50', 'bg-red-100');
+                        this.classList.replace('border-transparent', 'border-red-400');
+                        this.classList.remove('opacity-40');
+
+                        feedbackDiv.classList.add('bg-red-50', 'text-red-800', 'border-2', 'border-red-300');
+                        feedbackDiv.innerHTML = `<span class="text-lg block mb-1">💡 <strong>Kurang Tepat, yuk pelajari!</strong></span> ${questions[qIndex].pembahasan}`;
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
