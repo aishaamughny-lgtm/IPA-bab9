@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catatan IPA: Getaran, Gelombang & Bunyi</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Nunito', 'sans-serif'],
-                        calc: ['Quicksand', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Nunito', 'sans-serif'] },
                     colors: {
                         pastel: {
                             pink: '#FFD1DC',
@@ -21,7 +18,7 @@
                             yellow: '#FDFD96',
                             green: '#77DD77',
                             purple: '#C3B1E1',
-                            text: '#5D4037'
+                            brown: '#5D4037'
                         }
                     }
                 }
@@ -35,292 +32,324 @@
             background-size: 30px 30px;
             color: #5D4037;
         }
-        .cute-shadow { box-shadow: 5px 5px 0px 0px rgba(255, 182, 193, 0.5); }
-        .cute-shadow-blue { box-shadow: 5px 5px 0px 0px rgba(174, 198, 207, 0.5); }
-        .highlight {
-            background: linear-gradient(120deg, #ffffca 0%, #ffffca 100%);
-            background-repeat: no-repeat;
-            background-size: 100% 40%;
-            background-position: 0 80%;
-            font-weight: 700;
+        .notebook-border {
+            border-left: 40px solid #f9a8d4;
+            position: relative;
         }
-        input { border: 2px solid #ffe4e8; border-radius: 10px; padding: 8px; width: 100%; transition: 0.3s; font-family: 'Quicksand', sans-serif; }
-        input:focus { border-color: #ffb6c1; outline: none; box-shadow: 0 0 8px rgba(255, 182, 193, 0.5); }
-        .calc-btn { color: white; font-weight: bold; border-radius: 10px; padding: 10px; transition: 0.3s; width: 100%; cursor: pointer; }
-        .calc-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        .notebook-border::before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            border-left: 2px dashed rgba(255,255,255,0.5);
+        }
+        .highlight-yellow { background: linear-gradient(120deg, #fef08a 0%, #fef08a 100%); background-repeat: no-repeat; background-size: 100% 40%; background-position: 0 80%; }
+        .highlight-blue { background: linear-gradient(120deg, #bfdbfe 0%, #bfdbfe 100%); background-repeat: no-repeat; background-size: 100% 40%; background-position: 0 80%; }
+        .calc-box { border: 2px solid #e9d5ff; border-radius: 20px; transition: all 0.3s ease; }
+        .calc-box:hover { transform: translateY(-3px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
-<body class="p-4 md:p-8 font-sans selection:bg-pink-200">
+<body class="p-4 md:p-8">
 
-    <div class="max-w-4xl mx-auto bg-white rounded-3xl border-4 border-pink-200 p-6 md:p-10 relative overflow-hidden mb-10 shadow-xl">
+    <div class="max-w-4xl mx-auto bg-white rounded-[2rem] shadow-xl overflow-hidden notebook-border border-4 border-pink-100">
         
-        <!-- Notebook bindings decoration -->
-        <div class="absolute left-2 top-0 bottom-0 w-4 border-r-2 border-dashed border-gray-200"></div>
-
-        <!-- Header -->
-        <div class="text-center mb-10 pl-6">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-pink-400 mb-2 drop-shadow-sm uppercase">🌸 Catatan IPA Kelas 8 🌸</h1>
+        <!-- HEADER SECTION (SESUAI FOTO) -->
+        <div class="p-8 md:p-12 bg-white text-center">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-pink-400 mb-2 drop-shadow-sm">
+                🌸 Catatan IPA Kelas 8 🌸
+            </h1>
             <h2 class="text-xl md:text-2xl font-bold text-pastel-blue">Getaran, Gelombang, dan Bunyi 🎶</h2>
-            <p class="text-sm mt-2 text-gray-500 font-semibold italic">Semangat belajarnya, teman-teman! (๑˃̵ᴗ˂̵)و</p>
+            <p class="text-sm mt-2 text-gray-500 font-semibold italic">Semangat belajarnya! (๑˃̵ᴗ˂̵)و</p>
         </div>
 
-        <!-- SECTION 1: GETARAN -->
-        <div class="mb-12 pl-6">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="bg-pastel-yellow p-3 rounded-full text-2xl">🪀</div>
-                <h3 class="text-2xl font-bold border-b-4 border-pastel-yellow pb-1 uppercase tracking-wide">1. Getaran</h3>
+        <!-- 1. GETARAN -->
+        <div class="px-8 pb-10">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="bg-pastel-yellow w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm">🪀</div>
+                <h2 class="text-3xl font-black text-gray-700">1. GETARAN</h2>
             </div>
-            
-            <div class="bg-yellow-50 rounded-2xl p-5 border-2 border-yellow-200 cute-shadow">
-                <p class="mb-3"><span class="highlight">Getaran</span> adalah gerak bolak-balik secara periodik melalui <span class="font-bold text-yellow-600">titik keseimbangan</span>.</p>
+            <div class="space-y-6">
+                <div class="bg-gray-50 p-6 rounded-3xl border-l-8 border-pastel-yellow">
+                    <p class="text-lg leading-relaxed">
+                        Gerak bolak-balik suatu benda melalui <span class="highlight-yellow font-bold text-yellow-700">titik kesetimbangan</span> secara periodik.
+                    </p>
+                </div>
                 
-                <div class="flex flex-col md:flex-row gap-6 items-center my-4 bg-white p-4 rounded-xl">
-                    <div class="flex-1 text-sm">
-                        <ul class="space-y-2">
-                            <li>📍 <strong>Titik Keseimbangan:</strong> Posisi diam benda (B).</li>
-                            <li>📏 <strong>Amplitudo (A):</strong> Simpangan terjauh (B-A atau B-C).</li>
-                            <li>🔄 <strong>1 Getaran:</strong> A &rarr; B &rarr; C &rarr; B &rarr; A.</li>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm">
+                        <p class="font-black text-yellow-600 mb-3 text-lg uppercase">Besaran Getaran</p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-2">
+                                <span class="text-yellow-400">●</span>
+                                <div><b>Amplitudo (A):</b> Simpangan terjauh dari titik setimbang.</div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yellow-400">●</span>
+                                <div><b>Frekuensi (f):</b> Jumlah getaran dalam 1 detik. <br><span class="font-bold bg-yellow-50 px-2 rounded text-yellow-700">f = n / t</span></div>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-yellow-400">●</span>
+                                <div><b>Periode (T):</b> Waktu untuk 1 kali getaran. <br><span class="font-bold bg-yellow-50 px-2 rounded text-yellow-700">T = t / n</span></div>
+                            </li>
                         </ul>
                     </div>
-                    <div class="w-32 h-32 flex justify-center items-center bg-yellow-100 rounded-xl relative">
-                        <svg width="80" height="80" viewBox="0 0 100 100">
-                            <line x1="20" y1="10" x2="80" y2="10" stroke="#8B4513" stroke-width="4" stroke-linecap="round"/>
-                            <line x1="50" y1="10" x2="50" y2="70" stroke="#555" stroke-width="2" stroke-dasharray="4"/>
-                            <line x1="50" y1="10" x2="20" y2="60" stroke="#999" stroke-width="2"/>
-                            <line x1="50" y1="10" x2="80" y2="60" stroke="#999" stroke-width="2"/>
-                            <circle cx="50" cy="70" r="10" fill="#FFB6C1"/>
-                            <text x="12" y="78" font-size="10" font-weight="bold">A</text>
-                            <text x="45" y="94" font-size="10" font-weight="bold">B</text>
-                            <text x="78" y="78" font-size="10" font-weight="bold">C</text>
+                    <div class="bg-yellow-50 p-5 rounded-3xl flex flex-col items-center justify-center text-center">
+                        <p class="font-bold text-yellow-800 mb-2">Arah Getaran Ayunan:</p>
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <line x1="50" y1="0" x2="50" y2="80" stroke="#ccc" stroke-dasharray="4"/>
+                            <circle cx="50" cy="80" r="8" fill="#facc15"/>
+                            <text x="45" y="95" font-size="10" font-weight="bold">B</text>
+                            <text x="10" y="75" font-size="10" font-weight="bold">A</text>
+                            <text x="80" y="75" font-size="10" font-weight="bold">C</text>
                         </svg>
-                    </div>
-                </div>
-
-                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-white p-4 rounded-xl border border-yellow-200">
-                        <h4 class="font-bold text-yellow-600 italic">f = n / t</h4>
-                        <p class="text-xs">Banyak getaran tiap detik (Hz).</p>
-                    </div>
-                    <div class="bg-white p-4 rounded-xl border border-yellow-200">
-                        <h4 class="font-bold text-yellow-600 italic">T = t / n</h4>
-                        <p class="text-xs">Waktu untuk 1 getaran (s).</p>
+                        <p class="text-xs font-bold mt-2">1 Getaran = A-B-C-B-A</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 2: GELOMBANG -->
-        <div class="mb-12 pl-6">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="bg-pastel-blue p-3 rounded-full text-2xl">🌊</div>
-                <h3 class="text-2xl font-bold border-b-4 border-pastel-blue pb-1 uppercase tracking-wide">2. Gelombang</h3>
+        <!-- 2. GELOMBANG -->
+        <div class="px-8 pb-10">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="bg-pastel-blue w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm">🌊</div>
+                <h2 class="text-3xl font-black text-gray-700">2. GELOMBANG</h2>
             </div>
-
-            <div class="bg-blue-50 rounded-2xl p-5 border-2 border-blue-200 cute-shadow-blue">
-                <p class="mb-3">Getaran yang merambat dengan membawa <span class="highlight">Energi</span>.</p>
+            <div class="bg-blue-50 p-6 rounded-3xl border-2 border-blue-100">
+                <p class="mb-6 font-semibold">Getaran yang merambat dan memindahkan <span class="highlight-blue">energi</span> tanpa memindahkan mediumnya.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                        <p class="font-bold text-blue-500 mb-2">⚡ Klasifikasi Medium:</p>
+                        <p class="text-sm"><b>1. Mekanik:</b> Perlu medium (Bunyi, Tali).</p>
+                        <p class="text-sm"><b>2. Elektromagnetik:</b> Tanpa medium (Cahaya).</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-2xl border border-blue-100">
+                        <p class="font-bold text-blue-500 mb-2">📐 Rumus Cepat Rambat (v):</p>
+                        <p class="text-lg font-black text-center text-blue-600 bg-blue-50 rounded-xl py-2">v = λ . f atau v = λ / T</p>
+                    </div>
+                </div>
 
                 <div class="space-y-4">
-                    <div class="bg-white p-4 rounded-xl border border-blue-200 flex flex-col md:flex-row gap-4 items-center">
-                        <div class="flex-1 text-sm">
-                            <h5 class="font-bold text-blue-600 italic">〰️ Transversal</h5>
-                            <p class="text-xs">Arah getar tegak lurus arah rambat. Berupa bukit & lembah.</p>
+                    <div class="bg-white p-5 rounded-2xl border border-blue-100 flex gap-4 items-center">
+                        <div class="text-2xl">〰️</div>
+                        <div>
+                            <p class="font-bold">Gelombang Transversal</p>
+                            <p class="text-xs text-gray-500">Arah getar tegak lurus arah rambat. 1 Gel = 1 Bukit + 1 Lembah.</p>
                         </div>
-                        <svg width="120" height="30" viewBox="0 0 120 30">
-                            <path d="M 0 15 Q 15 0, 30 15 T 60 15 T 90 15 T 120 15" fill="none" stroke="#4682B4" stroke-width="2"/>
-                        </svg>
                     </div>
-                    <div class="bg-white p-4 rounded-xl border border-blue-200">
-                        <h5 class="font-bold text-blue-600 italic">🪗 Longitudinal</h5>
-                        <p class="text-xs text-sm">Arah getar sejajar arah rambat. Berupa rapatan & renggangan (Contoh: Bunyi).</p>
-                    </div>
-                </div>
-                
-                <div class="mt-4 bg-blue-100 p-4 rounded-xl text-center border-2 border-blue-200">
-                    <p class="font-bold text-blue-700">v = λ × f</p>
-                    <p class="text-[10px] text-blue-600 tracking-widest font-bold uppercase">Cepat Rambat = Panjang Gelombang × Frekuensi</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SECTION 3: BUNYI -->
-        <div class="mb-12 pl-6">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="bg-pastel-pink p-3 rounded-full text-2xl">🔊</div>
-                <h3 class="text-2xl font-bold border-b-4 border-pastel-pink pb-1 uppercase tracking-wide">3. Bunyi</h3>
-            </div>
-
-            <div class="bg-pink-50 rounded-2xl p-5 border-2 border-pink-200 cute-shadow">
-                <p class="mb-3 text-sm italic">Bunyi butuh medium untuk merambat (Padat, Cair, atau Gas).</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div class="bg-white p-3 rounded-xl text-center border border-pink-100">
-                        <p class="text-[10px] font-bold text-gray-400">INFRASONIK</p>
-                        <p class="text-xs font-bold">&lt; 20 Hz</p>
-                    </div>
-                    <div class="bg-white p-3 rounded-xl text-center border-2 border-pink-300">
-                        <p class="text-[10px] font-bold text-pink-500 uppercase">Audiosonik</p>
-                        <p class="text-xs font-bold">20 - 20.000 Hz</p>
-                    </div>
-                    <div class="bg-white p-3 rounded-xl text-center border border-pink-100">
-                        <p class="text-[10px] font-bold text-gray-400">ULTRASONIK</p>
-                        <p class="text-xs font-bold">&gt; 20.000 Hz</p>
+                    <div class="bg-white p-5 rounded-2xl border border-blue-100 flex gap-4 items-center">
+                        <div class="text-2xl">🪗</div>
+                        <div>
+                            <p class="font-bold">Gelombang Longitudinal</p>
+                            <p class="text-xs text-gray-500">Arah getar sejajar arah rambat. 1 Gel = 1 Rapatan + 1 Renggangan.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="my-10 border-t-4 border-dashed border-gray-100 ml-6"></div>
-
-        <!-- SECTION 4: KALKULATOR -->
-        <div class="pl-6 mb-16">
-            <div class="text-center mb-8">
-                <h3 class="text-3xl font-bold text-pink-500">🧮 Kalkulator Pintar</h3>
-                <p class="text-xs text-gray-400 font-calc uppercase tracking-widest">Alat bantu hitung otomatis</p>
+        <!-- 3. BUNYI -->
+        <div class="px-8 pb-10">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="bg-pastel-pink w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm">🦇</div>
+                <h2 class="text-3xl font-black text-gray-700">3. BUNYI</h2>
             </div>
+            <div class="bg-pink-50 p-6 rounded-3xl border-2 border-pink-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm mb-6">
+                    <div class="bg-white p-5 rounded-2xl shadow-sm">
+                        <p class="font-bold text-pink-500 mb-2 uppercase">Karakteristik</p>
+                        <ul class="space-y-1 text-gray-600">
+                            <li>• Gelombang Mekanik & Longitudinal.</li>
+                            <li>• Semakin padat medium, semakin cepat merambat.</li>
+                            <li>• Tidak merambat di ruang hampa.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-sm">
+                        <p class="font-bold text-pink-500 mb-2 uppercase">Pemantulan Bunyi</p>
+                        <p><b>Gaung:</b> Bunyi pantul datang hampir bersamaan bunyi asli. <br><b>Gema:</b> Bunyi pantul terdengar setelah bunyi asli.</p>
+                    </div>
+                </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-calc text-sm">
-                <!-- Kalkulator 1 -->
-                <div class="bg-white p-6 rounded-3xl border-2 border-yellow-100 cute-shadow" style="box-shadow: 5px 5px 0px 0px #FDFD96;">
-                    <h4 class="font-bold text-yellow-600 mb-4 flex items-center gap-2">⏱️ Getaran (f & T)</h4>
+                <div class="flex flex-col md:flex-row gap-2 mt-4">
+                    <div class="flex-1 bg-white p-3 rounded-xl border border-pink-200 text-center">
+                        <p class="text-xl">🦗🐕</p>
+                        <p class="font-bold text-xs uppercase">Infrasonik</p>
+                        <p class="text-[10px] font-bold text-pink-400">< 20 Hz</p>
+                    </div>
+                    <div class="flex-1 bg-pink-400 p-3 rounded-xl text-center text-white">
+                        <p class="text-xl">👩‍👩‍👦</p>
+                        <p class="font-bold text-xs uppercase">Audiosonik</p>
+                        <p class="text-[10px] font-bold">20 - 20.000 Hz</p>
+                    </div>
+                    <div class="flex-1 bg-white p-3 rounded-xl border border-pink-200 text-center">
+                        <p class="text-xl">🦇🐬</p>
+                        <p class="font-bold text-xs uppercase">Ultrasonik</p>
+                        <p class="text-[10px] font-bold text-pink-400">> 20.000 Hz</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. MEKANISME TELINGA & SONAR -->
+        <div class="px-8 pb-10">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="bg-pastel-green w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shadow-sm">👂</div>
+                <h2 class="text-3xl font-black text-gray-700">4. MEKANISME & TEKNOLOGI</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-green-50 p-6 rounded-3xl border border-green-100">
+                    <p class="font-bold text-green-700 mb-3 uppercase text-xs">Alur Pendengaran:</p>
+                    <div class="text-[11px] leading-relaxed text-green-900 font-bold bg-white p-4 rounded-xl border border-green-100">
+                        Daun Telinga → Gendang Telinga → Ma-La-Sa (Martil, Landasan, Sanggurdi) → Koklea → Saraf → Otak.
+                    </div>
+                </div>
+                <div class="bg-green-50 p-6 rounded-3xl border border-green-100">
+                    <p class="font-bold text-green-700 mb-2 uppercase text-xs">Teknologi Sonar:</p>
+                    <p class="text-[11px] mb-3">Mengukur kedalaman dengan pantulan bunyi.</p>
+                    <div class="bg-green-600 text-white p-3 rounded-xl text-center font-black text-lg">
+                        s = (v . t) / 2
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KALKULATOR RUMUS (Paling Bawah Sebelum Kuis) -->
+        <div class="p-8 bg-purple-50">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="bg-pastel-purple w-12 h-12 rounded-xl flex items-center justify-center text-2xl">🧮</div>
+                <h2 class="text-2xl font-black text-purple-700">KALKULATOR RUMUS</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 calc-box">
+                    <h4 class="font-bold text-purple-600 mb-4 text-xs uppercase">Hitung Frekuensi/Periode</h4>
                     <div class="space-y-3">
-                        <input type="number" id="n_val" placeholder="Jumlah Getaran (n)">
-                        <input type="number" id="t_val" placeholder="Waktu (t) sekon">
-                        <button onclick="hitungGetaran()" class="calc-btn bg-yellow-300 !text-yellow-800">Hitung ✨</button>
+                        <input type="number" id="n_val" class="w-full bg-gray-50 p-3 rounded-xl outline-none text-sm" placeholder="Jumlah Getaran (n)">
+                        <input type="number" id="t_val" class="w-full bg-gray-50 p-3 rounded-xl outline-none text-sm" placeholder="Waktu (t) detik">
+                        <button onclick="hitungGetaran()" class="w-full bg-purple-500 text-white font-black py-3 rounded-xl hover:bg-purple-600 transition">HITUNG ✨</button>
                     </div>
-                    <div id="res_getaran" class="hidden mt-4 p-3 bg-yellow-50 rounded-xl border-l-4 border-yellow-400 text-xs font-bold">
-                        <p id="out_f"></p>
-                        <p id="out_T"></p>
-                    </div>
+                    <div id="res_getaran" class="hidden mt-4 p-4 rounded-xl bg-purple-50 text-purple-700 font-bold text-sm"></div>
                 </div>
-
-                <!-- Kalkulator 2 -->
-                <div class="bg-white p-6 rounded-3xl border-2 border-blue-100 cute-shadow-blue">
-                    <h4 class="font-bold text-blue-500 mb-4 flex items-center gap-2">🌊 Cepat Rambat (v)</h4>
+                <div class="bg-white p-6 calc-box">
+                    <h4 class="font-bold text-purple-600 mb-4 text-xs uppercase">Hitung Kedalaman (s)</h4>
                     <div class="space-y-3">
-                        <input type="number" id="lambda_val" placeholder="Panjang Gelombang (λ)">
-                        <input type="number" id="f_gel_val" placeholder="Frekuensi (Hz)">
-                        <button onclick="hitungCepatRambat()" class="calc-btn bg-blue-300 shadow-md">Hasil v 🚀</button>
+                        <input type="number" id="v_sonar" class="w-full bg-gray-50 p-3 rounded-xl outline-none text-sm" placeholder="Kecepatan (v) m/s">
+                        <input type="number" id="t_sonar" class="w-full bg-gray-50 p-3 rounded-xl outline-none text-sm" placeholder="Waktu pantul (t) detik">
+                        <button onclick="hitungSonar()" class="w-full bg-purple-500 text-white font-black py-3 rounded-xl hover:bg-purple-600 transition">HITUNG 🚢</button>
                     </div>
-                    <div id="res_gelombang" class="hidden mt-4 p-3 bg-blue-50 rounded-xl border-l-4 border-blue-400 text-xs font-bold">
-                        <p id="out_v"></p>
-                    </div>
+                    <div id="res_sonar" class="hidden mt-4 p-4 rounded-xl bg-purple-50 text-purple-700 font-bold text-sm"></div>
                 </div>
             </div>
         </div>
 
-        <!-- SECTION 5: KUIS AI -->
-        <div class="pl-6 bg-pink-50 rounded-3xl p-6 border-2 border-pink-100">
-            <div class="text-center mb-6">
-                <h3 class="text-2xl font-bold text-pink-500 italic">🧠 Tantangan Kuis AI</h3>
-                <p class="text-xs text-gray-500">Minta AI buatkan soal latihan baru buat kita!</p>
-            </div>
+        <!-- KUIS INSTAN (Sesudah Catatan & Kalkulator) -->
+        <div class="p-8 bg-white border-t-8 border-dashed border-gray-50 text-center">
+            <h3 class="text-3xl font-black text-pink-500 mb-2">UJI PEMAHAMAN 🧠</h3>
+            <p class="text-gray-400 font-bold text-sm mb-8">Tes kemampuanmu dengan soal-soal ringkas!</p>
             
-            <div class="flex justify-center mb-8">
-                <button id="btn-generate-quiz" class="bg-gradient-to-r from-pink-400 to-purple-400 text-white font-bold py-3 px-10 rounded-full shadow-lg transform transition hover:scale-105 active:scale-95 text-sm uppercase tracking-wider">
-                    ✨ Buat Soal Latihan ✨
-                </button>
-            </div>
+            <button onclick="tampilKuis()" id="btn-quiz" class="bg-pink-400 hover:bg-pink-500 text-white font-black py-4 px-10 rounded-2xl shadow-xl transform transition hover:scale-105 active:scale-95">
+                ✨ TAMPILKAN KUIS SEKARANG ✨
+            </button>
 
-            <div id="quiz-container" class="space-y-6 hidden"></div>
+            <div id="quiz-area" class="mt-10 hidden space-y-6 text-left"></div>
         </div>
 
-        <p class="text-center mt-12 text-gray-300 text-[10px] font-bold uppercase tracking-[0.2em]">Digital Science Notebook &copy; 2024</p>
+        <div class="p-6 text-center text-gray-300 text-[10px] font-bold uppercase tracking-widest">
+            Catatan IPA Kelas 8 • Kurikulum Merdeka
+        </div>
     </div>
 
     <script>
-        const apiKey = ""; 
+        // Data Kuis Sesuai Materi
+        const dataKuis = [
+            {
+                q: "Sebuah benda melakukan 50 getaran dalam 2 detik. Berapa frekuensinya?",
+                a: ["10 Hz", "25 Hz", "100 Hz", "0.04 Hz"],
+                c: 1,
+                p: "f = n/t = 50 / 2 = 25 Hz."
+            },
+            {
+                q: "Singkatan 'Ma-La-Sa' pada tulang pendengaran adalah...",
+                a: ["Martil, Lambung, Sanggurdi", "Mata, Lengan, Sanggurdi", "Martil, Landasan, Sanggurdi", "Makan, Lari, Santai"],
+                c: 2,
+                p: "Martil, Landasan, dan Sanggurdi adalah tiga tulang pendengaran utama."
+            },
+            {
+                q: "Bunyi pantul yang terdengar jelas SETELAH bunyi asli selesai disebut...",
+                a: ["Gaung", "Gema", "Resonansi", "Infrasonik"],
+                c: 1,
+                p: "Gema terjadi ketika bunyi pantul datang setelah bunyi asli selesai."
+            },
+            {
+                q: "Batas pendengaran manusia normal adalah...",
+                a: ["Audiosonik", "Infrasonik", "Ultrasonik", "Supersonik"],
+                c: 0,
+                p: "Manusia mendengar bunyi Audiosonik (20 - 20.000 Hz)."
+            }
+        ];
+
+        function tampilKuis() {
+            const area = document.getElementById('quiz-area');
+            const btn = document.getElementById('btn-quiz');
+            area.classList.remove('hidden');
+            btn.classList.add('hidden');
+            area.innerHTML = '';
+            
+            dataKuis.forEach((item, i) => {
+                const card = document.createElement('div');
+                card.className = 'bg-gray-50 p-6 rounded-[2rem] border-2 border-pink-100 shadow-sm mb-4';
+                card.innerHTML = `
+                    <p class="font-black text-gray-700 mb-4 text-sm"><span class="text-pink-400">#${i+1}</span> ${item.q}</p>
+                    <div class="grid grid-cols-1 gap-2">
+                        ${item.a.map((opt, idx) => `
+                            <button onclick="cekJawaban(this, ${idx === item.c}, '${item.p}')" class="text-left p-3 rounded-xl bg-white border border-gray-200 text-xs font-bold hover:border-pink-200 transition">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="feedback hidden mt-3 p-3 rounded-xl text-[11px] font-bold"></div>
+                `;
+                area.appendChild(card);
+            });
+        }
+
+        function cekJawaban(el, isCorrect, pemb) {
+            const parent = el.parentElement;
+            if(parent.classList.contains('locked')) return;
+            parent.classList.add('locked');
+            const feedback = parent.nextElementSibling;
+            feedback.classList.remove('hidden');
+            if(isCorrect) {
+                el.classList.add('bg-green-500', 'text-white', 'border-green-500');
+                feedback.innerHTML = `🌟 BENAR! — ${pemb}`;
+                feedback.className += ' bg-green-50 text-green-700';
+            } else {
+                el.classList.add('bg-red-500', 'text-white', 'border-red-500');
+                feedback.innerHTML = `💡 KURANG TEPAT — ${pemb}`;
+                feedback.className += ' bg-red-50 text-red-700';
+            }
+        }
 
         function hitungGetaran() {
             const n = document.getElementById('n_val').value;
             const t = document.getElementById('t_val').value;
             const res = document.getElementById('res_getaran');
-            if(n > 0 && t > 0) {
-                document.getElementById('out_f').innerText = "Frekuensi (f) = " + (n/t).toFixed(2) + " Hz";
-                document.getElementById('out_T').innerText = "Periode (T) = " + (t/n).toFixed(2) + " s";
+            if(n && t) {
+                res.innerHTML = `f = ${(n/t).toFixed(1)} Hz | T = ${(t/n).toFixed(2)} detik`;
                 res.classList.remove('hidden');
             }
         }
 
-        function hitungCepatRambat() {
-            const l = document.getElementById('lambda_val').value;
-            const f = document.getElementById('f_gel_val').value;
-            const res = document.getElementById('res_gelombang');
-            if(l > 0 && f > 0) {
-                document.getElementById('out_v').innerText = "Cepat Rambat (v) = " + (l*f).toFixed(2) + " m/s";
+        function hitungSonar() {
+            const v = document.getElementById('v_sonar').value;
+            const t = document.getElementById('t_sonar').value;
+            const res = document.getElementById('res_sonar');
+            if(v && t) {
+                res.innerHTML = `Kedalaman: ${(v*t/2).toFixed(0)} meter 🚢`;
                 res.classList.remove('hidden');
             }
         }
-
-        async function fetchGeminiAPI(payload) {
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            return await response.json();
-        }
-
-        const btnQuiz = document.getElementById('btn-generate-quiz');
-        const quizContainer = document.getElementById('quiz-container');
-
-        btnQuiz.addEventListener('click', async () => {
-            btnQuiz.disabled = true;
-            btnQuiz.innerText = "⏳ Sedang Memuat...";
-            quizContainer.innerHTML = '<div class="text-center py-10"><p class="text-pink-400 animate-pulse font-bold">AI sedang meracik soal... ✨</p></div>';
-            quizContainer.classList.remove('hidden');
-
-            const prompt = `Buatkan 2 soal pilihan ganda bahasa Indonesia materi Getaran, Gelombang, atau Bunyi SMP Kelas 8. Sertakan kunci jawaban dan pembahasan. HARUS FORMAT JSON MURNI: [{"pertanyaan": "teks", "opsi": ["A. x", "B. y", "C. z", "D. w"], "jawaban_benar": index_integer, "pembahasan": "teks"}]`;
-
-            try {
-                const result = await fetchGeminiAPI({
-                    contents: [{ parts: [{ text: prompt }] }],
-                    generationConfig: { responseMimeType: "application/json" }
-                });
-                const data = JSON.parse(result.candidates[0].content.parts[0].text);
-                renderQuiz(data);
-            } catch (e) {
-                quizContainer.innerHTML = '<p class="text-red-400 text-center bg-white p-4 rounded-xl">Ups! Ada kesalahan teknis. Klik lagi tombol di atas ya.</p>';
-            } finally {
-                btnQuiz.disabled = false;
-                btnQuiz.innerText = "✨ Buat Soal Latihan ✨";
-            }
-        });
-
-        function renderQuiz(questions) {
-            quizContainer.innerHTML = '';
-            questions.forEach((q, i) => {
-                const div = document.createElement('div');
-                div.className = "bg-white p-6 rounded-2xl border border-pink-100 shadow-sm relative";
-                let optsHtml = '';
-                q.opsi.forEach((opt, idx) => {
-                    optsHtml += `<button onclick="checkAns(this, ${idx === q.jawaban_benar}, '${q.pembahasan.replace(/'/g, "\\'")}')" class="block w-full text-left p-3 rounded-xl bg-gray-50 mb-2 border-2 border-transparent hover:bg-pink-50 hover:border-pink-200 text-xs transition-all">${opt}</button>`;
-                });
-                div.innerHTML = `
-                    <div class="absolute -top-3 -left-3 bg-pink-400 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shadow-sm">${i+1}</div>
-                    <p class="font-bold text-sm mb-4 text-gray-800">${q.pertanyaan}</p>
-                    <div>${optsHtml}</div>
-                    <div class="feedback mt-4 hidden text-[11px] p-4 rounded-xl leading-relaxed"></div>
-                `;
-                quizContainer.appendChild(div);
-            });
-        }
-
-        window.checkAns = (btn, isCorrect, info) => {
-            const group = btn.parentElement;
-            const feedback = group.nextElementSibling;
-            if(group.dataset.answered) return;
-            group.dataset.answered = "true";
-            btn.classList.add(isCorrect ? '!bg-green-100' : '!bg-red-100');
-            btn.classList.add(isCorrect ? '!border-green-400' : '!border-red-400');
-            feedback.classList.remove('hidden');
-            feedback.classList.add(isCorrect ? 'bg-green-50' : 'bg-red-50');
-            feedback.classList.add(isCorrect ? 'text-green-800' : 'text-red-800');
-            feedback.classList.add('border');
-            feedback.innerHTML = `<span class="font-bold text-sm block mb-1">${isCorrect ? '✨ Betul!' : '💡 Kurang Tepat'}</span>${info}`;
-        };
     </script>
 </body>
 </html>
-   
-
-                \
